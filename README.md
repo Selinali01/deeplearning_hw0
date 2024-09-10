@@ -1,3 +1,5 @@
+To run the code, first install all the dependencies in requirements.txt. Then run the code in code/main.py. 
+
 ![Dropout Plot](graphs/dropout.png)
 ![Batchnorm Plot](graphs/batchnorm.png)
 ![Weight Decay Plot](graphs/weight_decay.png)
