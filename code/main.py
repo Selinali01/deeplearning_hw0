@@ -18,7 +18,7 @@ def main():
     
     # Initialize model
     use_dropout = False  # Toggle this to True/False to enable/disable dropout
-    use_batchnorm = True  # Toggle this to True/False to enable/disable batch normalization
+    use_batchnorm = False  # Toggle this to True/False to enable/disable batch normalization
     weight_decay = 0.000  # Set this to 0 to disable weight decay
     
     model = LeNet5(use_dropout=use_dropout, use_batchnorm=use_batchnorm).to(device)
