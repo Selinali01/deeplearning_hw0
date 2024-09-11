@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
+from evaluate import evaluate
 
 def train_epoch(model, dataloader, criterion, optimizer, device):
     model.train()
@@ -37,12 +38,13 @@ def validate(model, dataloader, criterion, device):
             correct += predicted.eq(labels).sum().item()
     return running_loss / len(dataloader), 100. * correct / total
 
-def train(model, train_loader, val_loader, num_epochs, learning_rate, device, weight_decay):
+def train(model, train_loader, val_loader, test_loader, num_epochs, learning_rate, device, weight_decay):
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
     
     train_acc_list = []
     val_acc_list = []
+    test_acc_list = []
     for epoch in range(num_epochs):
         train_loss, _ = train_epoch(model, train_loader, criterion, optimizer, device)
         
@@ -59,5 +61,12 @@ def train(model, train_loader, val_loader, num_epochs, learning_rate, device, we
         print(f"Train Loss: {train_loss:.4f} | Train Acc (without dropout): {train_acc:.2f}%")
         print(f"Val Loss: {val_loss:.4f} | Val Acc: {val_acc:.2f}%")
         print("-----------------------------")
+
+        # Evaluate on test set
+        test_acc = evaluate(model, test_loader, device)
+        test_acc_list.append(test_acc)
+        
+        print(f"Test Acc: {test_acc:.2f}%")
+        print("-----------------------------")
     
-    return model, train_acc_list, val_acc_list
+    return model, train_acc_list, val_acc_list,  test_acc_list

@@ -19,14 +19,14 @@ def main():
     # Initialize model
     use_dropout = False  # Toggle this to True/False to enable/disable dropout
     use_batchnorm = False  # Toggle this to True/False to enable/disable batch normalization
-    weight_decay = 0.000  # Set this to 0 to disable weight decay
+    weight_decay = 0.0001  # Set this to 0 to disable weight decay
     
     model = LeNet5(use_dropout=use_dropout, use_batchnorm=use_batchnorm).to(device)
     
     # Train model
     num_epochs = 10
     learning_rate = 0.001
-    trained_model, train_acc, val_acc = train(model, train_loader, val_loader, num_epochs, learning_rate, device, weight_decay)
+    trained_model, train_acc, val_acc, test_acc = train(model, train_loader, val_loader, test_loader, num_epochs, learning_rate, device, weight_decay)
     
     # Evaluate on test set
     test_accuracy = evaluate(trained_model, test_loader, device)
@@ -35,10 +35,10 @@ def main():
     # Convergence Graph
     plt.figure(figsize=(10, 5))
     plt.plot(train_acc, label="Train Accuracy")
-    plt.plot(val_acc, label="Validation Accuracy")
+    plt.plot(test_acc, label="Test Accuracy")
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy (%)')
-    plt.title(f'Train and Validation Accuracy\n(Dropout: {use_dropout}, BatchNorm: {use_batchnorm}, Weight Decay: {weight_decay})')
+    plt.title(f'Train and Test Accuracy\n(Dropout: {use_dropout}, BatchNorm: {use_batchnorm}, Weight Decay: {weight_decay})')
     plt.legend()
     plt.savefig(f'convergence_dropout{use_dropout}_batchnorm{use_batchnorm}_weightdecay{weight_decay}.png')
     plt.show()
