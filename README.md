@@ -9,7 +9,7 @@ This repository contains an implementation of the LeNet-5 neural network, modifi
 Clone this repository to your local machine using the following command:
 
 ```bash
-git clone xxx
+git clone https://github.com/Selinali01/deeplearning_hw0.git
 ```
 
 ### 2. Install Dependencies
