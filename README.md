@@ -1,4 +1,4 @@
-To run the code, first install all the dependencies in requirements.txt. Then run the code in code/main.py. The original code is set to no regularization trail. To run the code with dropout trail, set use_dropout to True. Similarly, to run the code with batch normalization, set the use_batchnorm to True. To run the code with l2 regularization, set the weight_decay to a nonzero value. To replicate our result, we set the weight_decay to 0.001. 
+To run the code, first install all the dependencies in requirements.txt. Then run the code in code/main.py. The original code is set to no regularization trail. To run the code with dropout trail, set use_dropout to True. Similarly, to run the code with batch normalization, set the use_batchnorm to True. To run the code with l2 regularization, set the weight_decay to a nonzero value. To replicate our result, we set the weight_decay to 0.0001. 
 
 ![Dropout Plot](graphs/dropout.png)
 ![Batchnorm Plot](graphs/batchnorm.png)
