@@ -13,26 +13,26 @@
   </tr>
   <tr>
     <td>Dropout</td>
-    <td>89.14%</td>
-    <td>88.43%</td>
-    <td>87.26%</td>
+    <td>90.09%</td>
+    <td>89.17%</td>
+    <td>88.68%</td>
   </tr>
   <tr>
     <td>Batchnorm</td>
-    <td>94.60%</td>
-    <td>90.42%</td>
-    <td>89.58%</td>
+    <td>94.52%</td>
+    <td>89.98%</td>
+    <td>89.51%</td>
   </tr>
   <tr>
     <td>Weight Decay</td>
-    <td>91.62%</td>
-    <td>89.28%</td>
-    <td>88.98%</td>
+    <td>91.25%</td>
+    <td>88.97%</td>
+    <td>88.36%</td>
   </tr>
   <tr>
     <td>No Regularization</td>
-    <td>92.12%</td>
-    <td>90.12%</td>
-    <td>89.34%</td>
+    <td>92.52%</td>
+    <td>90.50%</td>
+    <td>89.87%</td>
   </tr>
 </table>
