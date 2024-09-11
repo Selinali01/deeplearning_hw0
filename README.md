@@ -10,12 +10,42 @@ Clone this repository to your local machine using the following command:
 
 ```bash
 git clone xxx
+```
 
 ### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
+```
 
+### 3. Running the Default Configuration (No Regularization)
+By default, the code runs without any regularization techniques. You can run the code as follows:
+```bash
+python code/main.py
+```
+### 4. Running Different Regularization Techniques
+You can run the code with different regularization techniques by modifying parameters in main.py. Follow the instructions below to enable each regularization method.
+#### 1. Dropout Regularization 
+To enable Dropout, set the use_dropout variable to True in main.py:
+```bash
+use_dropout = True
+python code/main.py
+```
+#### 2. Batch Normalization 
+To enable Batch Normalization, set the use_batchnorm variable to True in main.py:
+```bash
+use_batchnorm = True
+python code/main.py
+```
+#### 3.  L2 Regularization (Weight Decay)
+To enable L2 Regularization, set the weight_decay parameter to a non-zero value (e.g., 0.0001) in main.py:
+```bash
+weight_decay = 0.0001
+python code/main.py
+```
+### 5. Results 
+The model generates accuracy graphs for both training and testing datasets across epochs for each regularization technique.
+4 graphs will be produced (training and testing accuracy for each technique) and saved to the results directory.
 
 ![Dropout Plot](graphs/dropout.png)
 ![Batchnorm Plot](graphs/batchnorm.png)
