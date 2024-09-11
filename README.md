@@ -1,4 +1,21 @@
-To run the code, first install all the dependencies in requirements.txt. Then run the code in code/main.py. The original code is set to no regularization trail. To run the code with dropout trail, set use_dropout to True. Similarly, to run the code with batch normalization, set the use_batchnorm to True. To run the code with l2 regularization, set the weight_decay to a nonzero value. To replicate our result, we set the weight_decay to 0.0001. 
+# LeNet-5 FashionMNIST Experiment
+
+This repository contains an implementation of the LeNet-5 neural network, modified to work with the FashionMNIST dataset. The code supports various regularization techniques such as Dropout, Batch Normalization, and L2 Regularization (Weight Decay). This README provides instructions on how to set up, run, and experiment with different regularization techniques.
+
+## Setup
+
+### 1. Clone the Repository
+
+Clone this repository to your local machine using the following command:
+
+```bash
+git clone xxx
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+
 
 ![Dropout Plot](graphs/dropout.png)
 ![Batchnorm Plot](graphs/batchnorm.png)
