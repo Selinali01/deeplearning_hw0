@@ -38,7 +38,7 @@ use_batchnorm = True
 python code/main.py
 ```
 #### 3.  L2 Regularization (Weight Decay)
-To enable L2 Regularization, set the weight_decay parameter to a non-zero value (e.g., 0.0001) in main.py:
+To enable L2 Regularization, set the weight_decay parameter to a non-zero value (In our case, we use 0.0001) in main.py:
 ```bash
 weight_decay = 0.0001
 python code/main.py
